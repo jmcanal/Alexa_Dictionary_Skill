@@ -1,0 +1,233 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "dictionary",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "WordDefinitionIntent",
+                    "slots": [
+                        {
+                            "name": "word",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "look up {word}",
+                                "definition of {word}",
+                                "{word}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "define {word}",
+                        "definition {word}",
+                        "what's {word}",
+                        "what is {word}",
+                        "definition of {word}",
+                        "{word} definition",
+                        "what does {word} mean",
+                        "word {word}",
+                        "lookup {word}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "WordExampleIntent",
+                    "slots": [
+                        {
+                            "name": "example",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "example {example}",
+                        "sentence for {example}",
+                        "{example} sentence",
+                        "{example} example",
+                        "sentence {example}",
+                        "{example} in a sentence",
+                        "example of {example}"
+                    ]
+                },
+                {
+                    "name": "ThesaurusIntent",
+                    "slots": [
+                        {
+                            "name": "synonym",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{synonym}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "another",
+                        "another word for {synonym}",
+                        "similar word for {synonym}",
+                        "synonym of {synonym}",
+                        "synonym {synonym}",
+                        "synonym",
+                        "thesaurus"
+                    ]
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": [
+                        "again",
+                        "repeat please",
+                        "repeat"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "WordDefinitionIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "word",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1508059009884.135400874778",
+                                "elicitation": "Elicit.Slot.1508059009884.135400874778"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "WordExampleIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "example",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.218494366784.1030763830667"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ThesaurusIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "synonym",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.716513023186.522460709001"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "SKILL_RESPONSE"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Intent-PetMatchIntent.IntentSlot-size",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "There are dogs that are tiny, small, medium, and large. Which would you like?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What size of a dog would you like?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Intent-PetMatchIntent.IntentSlot-temperament",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you looking for more of a family dog or a guard dog?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Would you prefer a dog to hang out with kids or to protect you?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Intent-PetMatchIntent.IntentSlot-energy",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you prefer high energy or low energy dogs?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1508059009884.135400874778",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What word would you like me to find?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Say a word you would like to look up."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1508059009884.135400874778",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "you would like to look up {word} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.218494366784.1030763830667",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What word would you like an example of?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.716513023186.522460709001",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What word you like to get a synonym of?"
+                    }
+                ]
+            }
+        ]
+    }
+}

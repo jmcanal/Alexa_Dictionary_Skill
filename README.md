@@ -1,4 +1,4 @@
-# Alexa_Dictionary_Skill
+# Alexa Dictionary Skill in Python
 
 An Alexa skill for voice-enabling the Merriam-Webster Learner’s Dictionary for English language learners.
 
